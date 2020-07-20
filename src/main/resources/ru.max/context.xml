@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="renderer" class="ru.max.StandardImplMessageRenderer">
+        <constructor-arg name="message" ref="messageBye"/>
+    </bean>
+
+    <bean id="messageHello" class="ru.max.HelloMessage">
+        <constructor-arg name="text" value="Max"/>
+    </bean>
+    <bean id="messageBye" class="ru.max.ByeMessage">
+        <constructor-arg name="text" value="Maxus"/>
+    </bean>
+
+</beans>
