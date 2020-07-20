@@ -7,7 +7,9 @@ public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("ru.max\\context.xml");
 
-        MessageRenderer renderer = (MessageRenderer) context.getBean("renderer");
-        renderer.printMessage();
+        IndependentMessageRenderer renderer = context.getBean(IndependentMessageRenderer.class);// second variant
+
+//        MessageRenderer renderer = (MessageRenderer) context.getBean("renderer"); // first variant
+        renderer.print();
     }
 }
